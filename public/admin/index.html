@@ -27,7 +27,7 @@
       netlifyIdentity.init();
 
       // Track if the user metadata has been updated
-      let isMetadataUpdated = true;
+      let isMetadataUpdated = false;
 
       // Check if the user is logged in and update metadata
       netlifyIdentity.on("login", (user) => {

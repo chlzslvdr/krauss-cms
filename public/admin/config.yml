@@ -15,7 +15,7 @@ public_folder: /images
 
 collections:
   - name: "pages"
-    label: "Pages"
+    label: "Portfolio CMS"
     files:
       - name: "home"
         label: "Home"
@@ -155,7 +155,7 @@ collections:
                 }
 
   - name: "blog"
-    label: "Blogs"
+    label: "Blog"
     folder: "content/blog"
     create: true
     slug: "{{slug}}"
@@ -164,7 +164,12 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string", default: "Admin" }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "string",
+          default: "Tabitha Krauss",
+        }
       - {
           label: "Featured Image",
           name: "featured_image",
