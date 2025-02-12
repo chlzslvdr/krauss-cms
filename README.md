@@ -5,6 +5,7 @@
 ### Built with:
 
 - [Next.js](https://nextjs.org)
+- [Decap CMS](https://decapcms.org) - Open source content management for your Git workflow
 - [Tailwind CSS](https://tailwindcss.com)
 
 ## Installation

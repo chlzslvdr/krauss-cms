@@ -47,7 +47,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       title: blog.title,
       date: blog.date,
       content: blog.content,
-      date: new Date(blog.date).toISOString(),
       author: blog.author,
       featured_image: blog.featured_image || null,
     },
