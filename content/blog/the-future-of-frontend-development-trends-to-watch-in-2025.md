@@ -3,6 +3,7 @@ title: "The Future of Frontend Development: Trends to Watch in 2025"
 slug: future-of-frontend-development-2025
 date: 2025-02-12T16:59:00.000Z
 author: Tabitha Krauss
+featured_image: /images/laptop.jpg
 is_show: true
 ---
 
