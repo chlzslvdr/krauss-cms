@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 import { BlogPost } from "@commons/interfaces/blog";
-import generateSlug from "@commons/methods/generateSlug";
+import { generateSlug } from "@commons/methods/generateSlug";
 
 /**
  * Get all blog posts, filtering out hidden ones.
