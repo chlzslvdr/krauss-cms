@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fc73f2ac-1b4c-46cf-bc35-b2b6e4101d3c/deploy-status)](https://app.netlify.com/sites/krauss-cms/deploys)
+
 # portfolio-cms
 
 ### Built with:

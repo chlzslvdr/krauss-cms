@@ -9,15 +9,12 @@ backend:
     deleteMedia: Delete “{{path}}”
 site_url: https://krauss-cms.netlify.app
 logo_url: https://chlzslvdr.sirv.com/my/logo.png
-search: false
 media_folder: static/images
 public_folder: /images
 collections:
   - name: "home"
     label: "Home"
-    folder: "content/home"
-    create: false
-    slug: "home"
+    file: "content/home.md"
     format: "frontmatter"
     fields:
       - { label: "Name", name: "name", widget: "string" }
@@ -37,7 +34,6 @@ collections:
               widget: "boolean",
               default: true,
             }
-
       - label: "Social Links"
         name: "social_links"
         widget: list
@@ -56,9 +52,7 @@ collections:
             }
   - name: "about"
     label: "About"
-    folder: "content/about"
-    create: false
-    slug: "about"
+    file: "content/about.md"
     format: "frontmatter"
     fields:
       - label: "Summary"
@@ -71,9 +65,7 @@ collections:
           - { label: "About Me", name: "about", widget: "string" }
   - name: "resume"
     label: "Resume"
-    folder: "content/resume"
-    create: false
-    slug: "resume"
+    file: "content/resume.md"
     format: "frontmatter"
     fields:
       - label: "Personal Info"
@@ -87,9 +79,7 @@ collections:
           - { label: "Summary", name: "summary", widget: "string" }
   - name: "portfolio"
     label: "Portfolio"
-    folder: "content/portfolio"
-    create: true
-    slug: "{{slug}}"
+    file: "content/portfolio.md"
     format: "frontmatter"
     fields:
       - label: "Projects"
@@ -110,9 +100,7 @@ collections:
             }
   - name: "testimonials"
     label: "Testimonials"
-    folder: "content/testimonials"
-    create: false
-    slug: "testimonials"
+    file: "content/testimonials.md"
     format: "frontmatter"
     fields:
       - label: "Testimonials"
@@ -150,6 +138,7 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string", default: "Admin" }
       - {
