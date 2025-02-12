@@ -160,9 +160,9 @@ collections:
     create: true
     slug: "{{slug}}"
     format: "frontmatter"
+    identifier_field: "title"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - {
           label: "Author",

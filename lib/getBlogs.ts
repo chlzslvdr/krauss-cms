@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 import { BlogPost } from "@commons/interfaces/blog";
+import generateSlug from "@commons/methods/generateSlug";
 
 /**
  * Get all blog posts, filtering out hidden ones.
@@ -19,10 +20,12 @@ export const getAllBlogs = (): BlogPost[] => {
 
       if (!data.is_show) return null;
 
+      const slug = filename.replace(".md", "") || generateSlug(data.title);
+
       return {
-        slug: filename.replace(".md", ""),
+        slug,
         title: data.title,
-        date: new Date(data.date).toISOString(),
+        date: data.date ? new Date(data.date).toISOString() : null,
         author: data.author,
         featured_image: data.featured_image || null,
       };
@@ -48,7 +51,7 @@ export const getBlogBySlug = async (slug: string) => {
   return {
     slug,
     title: data.title,
-    date: new Date(data.date).toISOString(),
+    date: data.date ? new Date(data.date).toISOString() : null,
     author: data.author,
     featured_image: data.featured_image || null,
     content: contentHtml,
