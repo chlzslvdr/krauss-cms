@@ -1,0 +1,33 @@
+{
+  "name": "portfolio-cms",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev -p 3070",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "chlzslvdr",
+  "license": "ISC",
+  "dependencies": {
+    "@flaticon/flaticon-uicons": "3.3.1",
+    "@iconify/react": "5.2.0",
+    "@tailwindcss/postcss": "4.0.6",
+    "lodash": "4.17.21",
+    "next": "15.1.7",
+    "next-seo": "6.6.0",
+    "postcss": "8.5.2",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "tailwindcss": "4.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "7.26.8",
+    "@babel/preset-react": "7.26.3",
+    "@types/lodash": "4.17.15",
+    "@types/next-seo": "2.1.2",
+    "@types/node": "22.13.1",
+    "@types/react": "19.0.8",
+    "frontmatter-markdown-loader": "3.7.0",
+    "typescript": "5.7.3"
+  }
+}

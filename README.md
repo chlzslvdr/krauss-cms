@@ -1,0 +1,30 @@
+# portfolio-cms
+
+### Built with:
+
+- [Next.js](https://nextjs.org)
+- [Tailwind CSS](https://tailwindcss.com)
+
+## Installation
+
+Clone and run yarn install to install the dependencies.
+
+```bash
+yarn install
+```
+
+## Start Locally
+
+Run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3070](http://localhost:3070) with your browser to see the result.

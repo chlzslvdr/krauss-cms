@@ -1,0 +1,167 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: Create {{collection}} “{{slug}}”
+    update: Update {{collection}} “{{slug}}”
+    delete: Delete {{collection}} “{{slug}}”
+    uploadMedia: Upload “{{path}}”
+    deleteMedia: Delete “{{path}}”
+site_url: https://krauss-cms.netlify.app
+logo_url: https://chlzslvdr.sirv.com/my/logo.png
+search: false
+media_folder: static/images
+public_folder: /images
+collections:
+  - name: "home"
+    label: "Home"
+    folder: "content/home"
+    create: false
+    slug: "home"
+    format: "frontmatter"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - label: "Navigations"
+        name: "navigations"
+        widget: list
+        max: 5
+        add_to_top: true
+        minimize_collapsed: true
+        fields:
+          - { label: "Page", name: "page", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - {
+              label: "Show Navigation",
+              name: "is_show",
+              widget: "boolean",
+              default: true,
+            }
+
+      - label: "Social Links"
+        name: "social_links"
+        widget: list
+        max: 5
+        add_to_top: true
+        minimize_collapsed: true
+        fields:
+          - { label: "Platform", name: "platform", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+          - { label: "Icon", name: "icon_class", widget: "string" }
+          - {
+              label: "Show Social Link",
+              name: "is_show",
+              widget: "boolean",
+              default: true,
+            }
+  - name: "about"
+    label: "About"
+    folder: "content/about"
+    create: false
+    slug: "about"
+    format: "frontmatter"
+    fields:
+      - label: "Summary"
+        name: "summary"
+        widget: "object"
+        fields:
+          - { label: "Job Title", name: "job_title", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "About Me", name: "about", widget: "string" }
+  - name: "resume"
+    label: "Resume"
+    folder: "content/resume"
+    create: false
+    slug: "resume"
+    format: "frontmatter"
+    fields:
+      - label: "Personal Info"
+        name: "personal_info"
+        widget: "object"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Summary", name: "summary", widget: "string" }
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    fields:
+      - label: "Projects"
+        name: "projects"
+        widget: list
+        add_to_top: true
+        minimize_collapsed: true
+        fields:
+          - { label: "Project Name", name: "project_name", widget: "string" }
+          - { label: "Url", name: "url", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Image", name: "img", widget: "image" }
+          - {
+              label: "Show Project",
+              name: "is_show",
+              widget: "boolean",
+              default: true,
+            }
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "content/testimonials"
+    create: false
+    slug: "testimonials"
+    format: "frontmatter"
+    fields:
+      - label: "Testimonials"
+        name: "testimonials"
+        widget: list
+        add_to_top: true
+        minimize_collapsed: true
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - {
+              label: "Company",
+              name: "company",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "Testimonial",
+              name: "testimonial",
+              widget: "text",
+              pattern: ["^.{1,500}$", "Max 500 characters."],
+            }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - {
+              label: "Show Testimonial",
+              name: "is_show",
+              widget: "boolean",
+              default: true,
+            }
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Admin" }
+      - {
+          label: "Featured Image",
+          name: "featured_image",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Content", name: "body", widget: "markdown" }
+      - {
+          label: "Show Blog",
+          name: "is_show",
+          widget: "boolean",
+          default: true,
+        }

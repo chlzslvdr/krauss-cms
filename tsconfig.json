@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "target": "es2016",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@content/*": ["content/*"],
+      "@pages/*": ["pages/*"],
+      "@styles/*": ["styles/*"],
+      "@commons/*": ["commons/*"],
+      "@components/*": ["components/*"],
+      "@modules/*": ["modules/*"],
+      "@images/*": ["public/images/*"]
+    }
+  },
+  "include": [
+    "global.d.ts",
+    "src/**/*",
+    "pages/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

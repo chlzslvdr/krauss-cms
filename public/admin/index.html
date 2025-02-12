@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>krauss-cms</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://chlzslvdr.sirv.com/my/logo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://chlzslvdr.sirv.com/my/logo.png"
+    />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <!-- Include the script that builds the page and powers Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.6.1/dist/decap-cms.js"></script>
+
+    <script>
+      // Initialize the Netlify Identity widget
+      netlifyIdentity.init();
+
+      // Track if the user metadata has been updated
+      let isMetadataUpdated = true;
+
+      // Check if the user is logged in and update metadata
+      netlifyIdentity.on("login", (user) => {
+        if (!isMetadataUpdated) {
+          // Update user metadata
+          user
+            .update({
+              data: {
+                avatar_url: "https://chlzslvdr.sirv.com/profile1.png",
+              },
+            })
+            .then((updatedUser) => {
+              console.info("User metadata updated:", updatedUser);
+              // Set the flag to true after updating
+              isMetadataUpdated = true;
+            })
+            .catch((error) => {
+              console.error("Failed to update user metadata:", error);
+            });
+        }
+      });
+    </script>
+  </body>
+</html>
