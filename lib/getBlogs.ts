@@ -10,11 +10,11 @@ import { generateSlug } from "@commons/methods/generateSlug";
  * Get all blog posts, filtering out hidden ones.
  */
 export const getAllBlogs = (): BlogPost[] => {
-  const files = fs.readdirSync(path.join("content/blog"));
+  const files = fs.readdirSync(path.join("contents/blog"));
 
   return files
     .map((filename) => {
-      const filePath = path.join("content/blog", filename);
+      const filePath = path.join("contents/blog", filename);
       const fileContent = fs.readFileSync(filePath, "utf-8");
       const { data } = matter(fileContent);
 
@@ -37,7 +37,7 @@ export const getAllBlogs = (): BlogPost[] => {
  * Get a single blog post by slug.
  */
 export const getBlogBySlug = async (slug: string) => {
-  const filePath = path.join("content/blog", `${slug}.md`);
+  const filePath = path.join("contents/blog", `${slug}.md`);
   if (!fs.existsSync(filePath)) return null;
 
   const fileContent = fs.readFileSync(filePath, "utf-8");

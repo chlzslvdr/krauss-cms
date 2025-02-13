@@ -1,10 +1,14 @@
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import filter from "lodash/filter";
-import { attributes } from "@content/home.md";
+import { attributes } from "@contents/home.md";
 import { HomeAttributes } from "@commons/interfaces/home";
 
 const Header = () => {
+  const router = useRouter();
+  const isHomePage = router.pathname === "/";
+
   const [isOpen, setIsOpen] = useState(false);
 
   const { navigations } = attributes as HomeAttributes;
@@ -13,18 +17,30 @@ const Header = () => {
   return (
     <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-gray-900">
-          MyLogo
-        </Link>
+        {!isHomePage ? (
+          <Link href="/" className="text-2xl font-bold text-gray-900">
+            Tabitha Krauss
+          </Link>
+        ) : (
+          <div />
+        )}
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6">
-          {filteredNavItems.map((nav, index) => (
-            <Link key={index} href={nav.link} className="hover:text-blue-500">
-              {nav.page}
-            </Link>
-          ))}
+          {filteredNavItems.map((nav, index) => {
+            const isActive = router.pathname === nav.link;
+            return (
+              <Link
+                key={index}
+                href={nav.link}
+                className={`hover:text-blue-500 ${
+                  isActive ? "text-blue-500 font-semibold" : "text-gray-900"
+                }`}
+              >
+                {nav.page}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Hamburger Menu Button */}
@@ -61,16 +77,21 @@ const Header = () => {
       >
         {/* Mobile Navigation */}
         <nav className="flex flex-col gap-6 text-xl">
-          {filteredNavItems.map((nav, index) => (
-            <Link
-              key={index}
-              href={nav.link}
-              className="hover:text-blue-500 text-center"
-              onClick={() => setIsOpen(false)}
-            >
-              {nav.page}
-            </Link>
-          ))}
+          {filteredNavItems.map((nav, index) => {
+            const isActive = router.pathname === nav.link;
+            return (
+              <Link
+                key={index}
+                href={nav.link}
+                className={`hover:text-blue-500 text-center ${
+                  isActive ? "text-blue-500 font-semibold" : "text-gray-900"
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                {nav.page}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>

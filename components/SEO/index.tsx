@@ -14,7 +14,7 @@ interface SEOProps {
 }
 
 const SEO = ({ title, description, canonical, openGraph }: SEOProps) => {
-  const SEOTitle = !isEmpty(title) ? `${title} | krauss` : "krauss";
+  const SEOTitle = !isEmpty(title) ? `${title} | Krauss` : "Tabitha Krauss";
 
   return (
     <NextSeo

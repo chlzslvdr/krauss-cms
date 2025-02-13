@@ -16,6 +16,7 @@ interface TechnologyStack {
 interface Certificates {
   course: string;
   url: string;
+  data_icon?: string;
   icon_class: string;
   is_show: boolean;
 }

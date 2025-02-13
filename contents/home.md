@@ -14,9 +14,6 @@ navigations:
   - page: Portfolio
     link: /portfolio
     is_show: true
-  - page: Testimonials
-    link: /testimonials
-    is_show: false
   - page: Blogs
     link: /blogs
     is_show: true

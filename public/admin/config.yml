@@ -15,11 +15,11 @@ public_folder: /images
 
 collections:
   - name: "pages"
-    label: "Portfolio CMS"
+    label: "Krauss CMS"
     files:
       - name: "home"
         label: "Home"
-        file: "content/home.md"
+        file: "contents/home.md"
         format: "frontmatter"
         fields:
           - { label: "Name", name: "name", widget: "string" }
@@ -58,7 +58,7 @@ collections:
 
       - name: "about"
         label: "About"
-        file: "content/about.md"
+        file: "contents/about.md"
         format: "frontmatter"
         fields:
           - label: "Summary"
@@ -101,6 +101,12 @@ collections:
               - { label: "Url", name: "url", widget: "string" }
               - { label: "Icon", name: "icon_class", widget: "string" }
               - {
+                  label: "Data Icon",
+                  name: "data_icon",
+                  widget: "string",
+                  required: false,
+                }
+              - {
                   label: "Show Certificate",
                   name: "is_show",
                   widget: "boolean",
@@ -109,7 +115,7 @@ collections:
 
       - name: "resume"
         label: "Resume"
-        file: "content/resume.md"
+        file: "contents/resume.md"
         format: "frontmatter"
         fields:
           - label: "Personal Info"
@@ -174,7 +180,7 @@ collections:
 
       - name: "portfolio"
         label: "Portfolio"
-        file: "content/portfolio.md"
+        file: "contents/portfolio.md"
         format: "frontmatter"
         fields:
           - label: "Projects"
@@ -190,7 +196,7 @@ collections:
                 }
               - { label: "Url", name: "url", widget: "string" }
               - { label: "Description", name: "description", widget: "string" }
-              - { label: "Image", name: "img", widget: "image" }
+              - { label: "Image", name: "image", widget: "image" }
               - {
                   label: "Show Project",
                   name: "is_show",
@@ -200,7 +206,7 @@ collections:
 
       - name: "testimonials"
         label: "Testimonials"
-        file: "content/testimonials.md"
+        file: "contents/testimonials.md"
         format: "frontmatter"
         fields:
           - label: "Testimonials"
@@ -243,7 +249,7 @@ collections:
 
   - name: "blog"
     label: "Blog"
-    folder: "content/blog"
+    folder: "contents/blog"
     create: true
     slug: "{{slug}}"
     format: "frontmatter"

@@ -1,41 +1,34 @@
 import React from "react";
 import Link from "next/link";
 import filter from "lodash/filter";
-import { attributes } from "@content/home.md";
+import { attributes } from "@contents/home.md";
 import { HomeAttributes } from "@commons/interfaces/home";
-import SEO from '@components/SEO/index';
-
 
 const Home = () => {
-  const { name, subtitle, social_links, navigations } =
-    attributes as HomeAttributes;
-
-  const filteredNavItems = filter(navigations, { is_show: true });
-  const filteredSocialLinkItems = filter(social_links, { is_show: true });
+  const { name, subtitle, social_links } = attributes as HomeAttributes;
+  const filteredSocialLinks = filter(social_links, { is_show: true });
 
   return (
     <>
-      <SEO title="Home" />
+      <section className="flex flex-col items-center justify-center min-h-screen text-center px-4">
+        <h1 className="text-4xl font-bold">{name}</h1>
+        <p className="text-lg text-gray-600 mt-2">{subtitle}</p>
 
-      <h2>Navigations:</h2>
-      {filteredNavItems.map((nav, index) => (
-        <Link key={index} href={nav.link}>
-          {nav.page}
-        </Link>
-      ))}
-
-      <h2>Social Links:</h2>
-      {filteredSocialLinkItems.map((social, index) => (
-        <Link key={index} href={social.url} legacyBehavior>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={social.platform}
-          >
-            <i className={social.icon_class} />
-          </a>
-        </Link>
-      ))}
+        <div className="flex gap-4 mt-6">
+          {filteredSocialLinks.map((social, index) => (
+            <Link key={index} href={social.url} legacyBehavior>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.platform}
+                className="text-2xl text-gray-700 hover:text-black transition"
+              >
+                <i className={social.icon_class} />
+              </a>
+            </Link>
+          ))}
+        </div>
+      </section>
     </>
   );
 };

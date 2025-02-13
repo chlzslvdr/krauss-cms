@@ -44,7 +44,7 @@ technology_stacks:
 certificates:
   - course: Next.js & React Advanced Concepts
     url: https://www.udemy.com
-    icon_class: devicon-css3-plain colored
+    icon_class: devicon-react-original colored
     is_show: true
   - course: AWS Cloud Practitioner Essentials
     url: https://aws.amazon.com/certification

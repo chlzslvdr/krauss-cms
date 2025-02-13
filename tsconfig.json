@@ -16,7 +16,7 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
-      "@content/*": ["content/*"],
+      "@contents/*": ["contents/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
       "@commons/*": ["commons/*"],
