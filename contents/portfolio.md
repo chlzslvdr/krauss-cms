@@ -10,7 +10,7 @@ projects:
     url: https://www.google.com
     image: images/portfolio-2.png
     is_show: true
-  - project_name: Graphic Design
+  - project_name: Calendar Template
     description: Canva Template
     url: https://www.canva.com
     image: images/portfolio-3.png
