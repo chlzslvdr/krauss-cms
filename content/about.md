@@ -2,7 +2,7 @@
 summary:
   job_title: Frontend Developer | UI/UX Enthusiast
   phone: "0844 499 5000"
-  email: tabitha@hogwarts.com
+  email: tabitha@yahoo.com
   about: I’m a passionate Frontend Developer with 5+ years of experience crafting intuitive and engaging web experiences. Skilled in TypeScript, React, and Next.js, I specialize in building fast, accessible, and user-friendly applications. I have a strong eye for design and love bringing ideas to life through code.
 technology_stacks:
   - tech: HTML5
@@ -27,14 +27,6 @@ technology_stacks:
     icon_class: iconify
     is_show: true
     data_icon: logos:apollostack
-  - tech: Strapi
-    icon_class: iconify
-    is_show: true
-    data_icon: simple-icons:strapi
-  - is_show: true
-    tech: GatsbyJS
-    icon_class: iconify
-    data_icon: logos:gatsby
   - tech: NextJS
     icon_class: iconify
     is_show: true
@@ -54,8 +46,8 @@ certificates:
     url: https://www.udemy.com
     icon_class: devicon-css3-plain colored
     is_show: true
-  - course: JavaScript Algorithms & Data Structures
-    url: https://www.freecodecamp.org
-    icon_class: devicon-sass-original colored
+  - course: AWS Cloud Practitioner Essentials
+    url: https://aws.amazon.com/certification
+    icon_class: devicon-amazonwebservices-plain-wordmark
     is_show: true
 ---

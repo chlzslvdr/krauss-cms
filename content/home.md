@@ -16,10 +16,10 @@ navigations:
     is_show: true
   - page: Testimonials
     link: /testimonials
-    is_show: true
+    is_show: false
   - page: Blogs
     link: /blogs
-    is_show: false
+    is_show: true
   - page: Contact
     link: /contact
     is_show: true

@@ -9,7 +9,7 @@ backend:
     deleteMedia: Delete “{{path}}”
 
 site_url: https://krauss-cms.netlify.app
-logo_url: https://chlzslvdr.sirv.com/my/logo.png
+logo_url: https://chlzslvdr.sirv.com/krauss/logo.png
 media_folder: static/images
 public_folder: /images
 
@@ -163,7 +163,7 @@ collections:
     identifier_field: "title"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "LL" }
       - {
           label: "Author",
           name: "author",

@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link
           rel="icon"
-          href="https://chlzslvdr.sirv.com/my/logo.png"
+          href="https://chlzslvdr.sirv.com/krauss/logo.png"
           type="image/png"
         />
       </Head>
