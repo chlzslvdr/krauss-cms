@@ -1,6 +1,6 @@
 ---
 title: "The Rise of AI in Frontend Development: How It’s Changing the Game"
-date: 2025-01-14T17:56:00.000Z
+date: January 22, 2025
 author: Tabitha Krauss
 is_show: false
 ---
