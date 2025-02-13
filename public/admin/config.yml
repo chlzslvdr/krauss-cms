@@ -70,6 +70,43 @@ collections:
               - { label: "Email", name: "email", widget: "string" }
               - { label: "About Me", name: "about", widget: "string" }
 
+          - label: "Technology Stacks"
+            name: "technology_stacks"
+            widget: "list"
+            add_to_top: true
+            minimize_collapsed: true
+            fields:
+              - { label: "Technology", name: "tech", widget: "string" }
+              - { label: "Icon", name: "icon_class", widget: "string" }
+              - {
+                  label: "Data Icon",
+                  name: "data_icon",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Show Technology Stack",
+                  name: "is_show",
+                  widget: "boolean",
+                  default: true,
+                }
+
+          - label: "Certificates"
+            name: "certificates"
+            widget: "list"
+            add_to_top: true
+            minimize_collapsed: true
+            fields:
+              - { label: "Course", name: "course", widget: "string" }
+              - { label: "Url", name: "url", widget: "string" }
+              - { label: "Icon", name: "icon_class", widget: "string" }
+              - {
+                  label: "Show Certificate",
+                  name: "is_show",
+                  widget: "boolean",
+                  default: true,
+                }
+
       - name: "resume"
         label: "Resume"
         file: "content/resume.md"
@@ -84,6 +121,56 @@ collections:
               - { label: "Phone", name: "phone", widget: "string" }
               - { label: "Email", name: "email", widget: "string" }
               - { label: "Summary", name: "summary", widget: "string" }
+
+          - label: "Educations"
+            name: "educations"
+            widget: "list"
+            add_to_top: true
+            minimize_collapsed: true
+            fields:
+              - { label: "School", name: "school", widget: "string" }
+              - { label: "Degree", name: "degree", widget: "string" }
+              - {
+                  label: "Year Started",
+                  name: "year_started",
+                  widget: "number",
+                }
+              - { label: "Year Ended", name: "year_ended", widget: "number" }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Show Education",
+                  name: "is_show",
+                  widget: "boolean",
+                  default: true,
+                }
+
+          - label: "Professional Experiences"
+            name: "professional_experiences"
+            widget: "list"
+            add_to_top: true
+            minimize_collapsed: true
+            fields:
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Position", name: "position", widget: "string" }
+              - { label: "Start Date", name: "start_date", widget: "string" }
+              - { label: "End Date", name: "end_date", widget: "string" }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "markdown",
+                  required: false,
+                }
+              - {
+                  label: "Show Experience",
+                  name: "is_show",
+                  widget: "boolean",
+                  default: true,
+                }
 
       - name: "portfolio"
         label: "Portfolio"

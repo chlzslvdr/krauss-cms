@@ -31,3 +31,11 @@ bun dev
 ```
 
 Open [http://localhost:3070](http://localhost:3070) with your browser to see the result.
+
+## Access CMS Admin
+
+Open [https://krauss-cms.netlify.app/admin](https://krauss-cms.netlify.app/admin) and log in using these credentials.
+
+username: `chelzeasalvador@gmail.com`
+
+password: `Ubidy1234!`
