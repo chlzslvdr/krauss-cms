@@ -269,6 +269,7 @@ collections:
           widget: "image",
           required: false,
         }
+      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
       - { label: "Content", name: "body", widget: "markdown" }
       - {
           label: "Show Blog",

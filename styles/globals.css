@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -19,9 +19,18 @@
 }
 
 @keyframes fade {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .animate-fade {
   animation: fade 1s ease-in-out forwards 19s;
+}
+
+html,
+body {
+  height: 100%;
 }

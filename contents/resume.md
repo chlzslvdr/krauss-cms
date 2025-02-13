@@ -4,7 +4,7 @@ personal_info:
   summary: I’m a passionate Frontend Developer with 5+ years of experience crafting intuitive and engaging web experiences. Skilled in TypeScript, React, and Next.js, I specialize in building fast, accessible, and user-friendly applications. I have a strong eye for design and love bringing ideas to life through code.
   address: 748 High Rd, Vauxhall, London
   phone: 0844 499 5000
-  email: tabitha@hogwarts.com
+  email: tabitha@yahoo.com
 educations:
   - school: Oxford University
     degree: B.S. in Computer Science

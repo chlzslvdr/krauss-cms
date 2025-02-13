@@ -2,7 +2,8 @@
 title: "The Rise of AI in Frontend Development: How It’s Changing the Game"
 date: January 22, 2025
 author: Tabitha Krauss
-is_show: false
+is_show: true
+excerpt: "From intelligent code suggestions to automated UI testing, AI is reshaping the way developers build and optimize web applications."
 ---
 
 ### **Introduction**

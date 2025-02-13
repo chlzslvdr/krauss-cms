@@ -22,13 +22,11 @@ const Blogs = ({ blogs }: BlogProps) => {
                   {blog.title}
                 </h2>
               </Link>
-              <p className="text-gray-500 text-sm mt-2">
-                {new Intl.DateTimeFormat("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                }).format(new Date(blog.date))}
-              </p>
+              <p className="text-gray-500 text-sm mt-2">{blog.date}</p>
+
+              {blog.excerpt && (
+                <p className="text-gray-700 mt-2">{blog.excerpt}</p>
+              )}
 
               <div className="mt-4">
                 <Link href={`/blog/${blog.slug}`}>

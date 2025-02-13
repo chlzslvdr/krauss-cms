@@ -5,6 +5,7 @@ export type BlogPost = {
   author: string;
   featured_image?: string;
   is_show: boolean;
+  excerpt?: string;
 };
 
 export type BlogProps = {
@@ -17,4 +18,6 @@ export type BlogPostProps = {
   content: string;
   author: string;
   featured_image?: string;
+  is_show: boolean;
+  excerpt?: string;
 };

@@ -4,6 +4,7 @@ date: February 10, 2025
 author: Tabitha Krauss
 featured_image: images/laptop.jpg
 is_show: true
+excerpt: "Frontend development is evolving rapidly, with new technologies and best practices emerging each year."
 ---
 
 ### Introduction
