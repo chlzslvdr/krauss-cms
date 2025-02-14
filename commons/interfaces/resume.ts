@@ -10,7 +10,7 @@ interface Education {
   degree: string;
   description?: string;
   year_started: number;
-  year_ended: number;
+  year_ended?: number;
   is_show: boolean;
 }
 
@@ -19,7 +19,7 @@ interface Experience {
   position: string;
   description?: string;
   start_date: string;
-  end_date: string;
+  end_date?: string;
   is_show: boolean;
 }
 

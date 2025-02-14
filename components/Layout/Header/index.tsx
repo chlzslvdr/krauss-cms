@@ -28,7 +28,11 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6">
           {filteredNavItems.map((nav, index) => {
-            const isActive = router.pathname === nav.link;
+            const isActive =
+            router.pathname === nav.link || 
+            (nav.link === "/blog" && router.pathname.startsWith("/blogs")) ||
+            (nav.link === "/blogs" && router.pathname.startsWith("/blog"));
+
             return (
               <Link
                 key={index}
@@ -78,7 +82,11 @@ const Header = () => {
         {/* Mobile Navigation */}
         <nav className="flex flex-col gap-6 text-xl">
           {filteredNavItems.map((nav, index) => {
-            const isActive = router.pathname === nav.link;
+            const isActive =
+            router.pathname === nav.link || 
+            (nav.link === "/blog" && router.pathname.startsWith("/blogs")) ||
+            (nav.link === "/blogs" && router.pathname.startsWith("/blog"));
+
             return (
               <Link
                 key={index}

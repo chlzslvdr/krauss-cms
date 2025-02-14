@@ -1,12 +1,14 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fc73f2ac-1b4c-46cf-bc35-b2b6e4101d3c/deploy-status)](https://app.netlify.com/sites/krauss-cms/deploys)
 
-# portfolio-cms
+# krauss-cms
 
 ### Built with:
 
 - [Next.js](https://nextjs.org)
 - [Decap CMS](https://decapcms.org) - Open source content management for your Git workflow
 - [Tailwind CSS](https://tailwindcss.com)
+- [Netlify](https://www.netlify.com)
+- [Netlify Forms & Identity](https://www.netlify.com)
 
 ## Installation
 

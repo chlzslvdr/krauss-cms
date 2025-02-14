@@ -20,7 +20,6 @@ professional_experiences:
   - company: Tech Solutions Inc.
     position: Frontend Developer
     start_date: Jan 2021
-    end_date: present
     description: >-
       * Developed and maintained a modern Next.js application for an e-commerce platform.
 

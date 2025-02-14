@@ -141,7 +141,12 @@ collections:
                   name: "year_started",
                   widget: "number",
                 }
-              - { label: "Year Ended", name: "year_ended", widget: "number" }
+              - {
+                  label: "Year Ended",
+                  name: "year_ended",
+                  widget: "number",
+                  required: false,
+                }
               - {
                   label: "Description",
                   name: "description",
@@ -164,7 +169,12 @@ collections:
               - { label: "Company", name: "company", widget: "string" }
               - { label: "Position", name: "position", widget: "string" }
               - { label: "Start Date", name: "start_date", widget: "string" }
-              - { label: "End Date", name: "end_date", widget: "string" }
+              - {
+                  label: "End Date",
+                  name: "end_date",
+                  widget: "string",
+                  required: false,
+                }
               - {
                   label: "Description",
                   name: "description",
@@ -233,12 +243,6 @@ collections:
                   name: "testimonial",
                   widget: "text",
                   pattern: ["^.{1,500}$", "Max 500 characters."],
-                }
-              - {
-                  label: "Image",
-                  name: "image",
-                  widget: "image",
-                  required: false,
                 }
               - {
                   label: "Show Testimonial",

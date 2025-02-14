@@ -10,7 +10,7 @@ testimonials:
     company: DevTech
     testimonial: Tabitha's ability to problem-solve and optimize performance made a huge difference for our web app. Highly recommended!
     is_show: true
-  - name: Engineer
+  - name: Lillian Craft
     title: Product Manager
     company: Pixel Tech
     testimonial: Working with Tabitha has been an absolute game-changer! Their professionalism, attention to detail, and creative approach exceeded all my expectations.
