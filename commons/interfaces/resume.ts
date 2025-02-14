@@ -3,6 +3,7 @@ interface PersonalInfo {
   summary: string;
   address: string;
   phone: string;
+  email: string;
 }
 
 interface Education {
