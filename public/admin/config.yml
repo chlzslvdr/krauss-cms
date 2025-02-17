@@ -10,8 +10,8 @@ backend:
 
 site_url: https://krauss-cms.netlify.app
 logo_url: https://chlzslvdr.sirv.com/krauss/logo.png
-media_folder: static/images
-public_folder: /images
+media_folder: static/assets
+public_folder: /assets
 
 collections:
   - name: "pages"
@@ -191,8 +191,6 @@ collections:
           - label: "Upload Resume"
             name: "cv"
             widget: "file"
-            media_folder: "static/files"
-            public_folder: "/files"
             accept: ".pdf"
             allow_multiple: false
 
