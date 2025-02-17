@@ -188,6 +188,14 @@ collections:
                   default: true,
                 }
 
+          - label: "Upload Resume"
+            name: "cv"
+            widget: "file"
+            media_folder: "static/files"
+            public_folder: "/files"
+            accept: ".pdf"
+            allow_multiple: false
+
       - name: "portfolio"
         label: "Portfolio"
         file: "contents/portfolio.md"
