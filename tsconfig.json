@@ -22,7 +22,6 @@
       "@commons/*": ["commons/*"],
       "@components/*": ["components/*"],
       "@modules/*": ["modules/*"],
-      "@images/*": ["public/images/*"],
       "@lib/*": ["lib/*"]
     }
   },

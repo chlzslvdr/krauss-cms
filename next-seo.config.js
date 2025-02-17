@@ -1,7 +1,6 @@
 const SEO = {
   title: "Tabitha Krauss",
-  description:
-    "I’m a passionate Frontend Developer with 5+ years of experience crafting intuitive and engaging web experiences.",
+  description: "Sample Portfolio Website made with Decap CMS",
   openGraph: {
     type: "website",
     locale: "en_US",
