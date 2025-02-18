@@ -16,8 +16,8 @@ testimonials:
     testimonial: Working with Tabitha has been an absolute game-changer! Their professionalism, attention to detail, and creative approach exceeded all my expectations.
     is_show: false
   - name: Cyrena Grove
-    title: Director
-    company: Lumos Co.
+    title: Quality Engineer
+    company: Lumos Solutions
     testimonial: I was blown away by the level of expertise and dedication. From start to finish, the process was seamless.
     is_show: true
   - name: Adar Barlow

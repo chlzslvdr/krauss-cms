@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAllBlogs, getBlogBySlug } from "@lib/getBlogs";
 import { BlogPostProps } from "@commons/interfaces/blog";
 import SEO from "@components/SEO/index";
-import {getImageSrc} from "@commons/methods/getImageSrc";
+import { getImageSrc } from "@commons/methods/getImageSrc";
 
 const BlogPost: React.FC<BlogPostProps> = ({
   title,
@@ -15,14 +15,27 @@ const BlogPost: React.FC<BlogPostProps> = ({
 }) => {
   return (
     <>
-      <SEO title={title} description={excerpt} />
+      <SEO
+        title={title}
+        description={excerpt}
+        openGraph={{
+          images: [
+            {
+              alt: title,
+              url: featured_image
+                ? getImageSrc(featured_image)
+                : "https://chlzslvdr.sirv.com/krauss/default.jpg",
+            },
+          ],
+        }}
+      />
 
       <main className="max-w-3xl mx-auto p-6">
         {featured_image && (
           <div className="mb-6">
             <img
-              src={getImageSrc(featured_image)}
               alt={title}
+              src={getImageSrc(featured_image)}
               className="w-full h-64 object-cover rounded-xl shadow-md"
             />
           </div>
@@ -37,7 +50,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
         </div>
 
         <article
-          className="mt-6 prose prose-lg max-w-none leading-relaxed text-gray-800"
+          className="mt-6 prose prose-lg max-w-none leading-relaxed text-gray-800 [&>p]:mb-4 [&>h1]:text-2xl [&>h2]:text-xl [&>h3]:text-lg [&>ul]:list-disc [&>ul]:pl-5 [&>ol]:list-decimal [&>ol]:pl-5"
           dangerouslySetInnerHTML={{ __html: content }}
         />
 

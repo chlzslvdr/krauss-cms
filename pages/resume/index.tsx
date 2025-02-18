@@ -1,55 +1,54 @@
 import React, { useEffect, useState } from "react";
 import filter from "lodash/filter";
+import isEmpty from "lodash/isEmpty";
 import { attributes } from "@contents/resume.md";
 import { ResumeAttributes } from "@commons/interfaces/resume";
 import { convertMarkdownToHtml } from "@commons/methods/convertMarkdownToHtml";
 import SEO from "@components/SEO/index";
+import { getFileSrc } from "@commons/methods/getFileSrc";
 
 const PRESENT = "Present";
 
+const DEFAULT_RESUME = "https://chlzslvdr.sirv.com/krauss/resume.pdf";
+
 const Resume = () => {
-  const { personal_info, educations, professional_experiences } =
+  const { personal_info, educations, professional_experiences, cv } =
     attributes as ResumeAttributes;
 
   const filteredEducationItems = filter(educations, { is_show: true });
   const filteredProfessionalExperienceItems = filter(professional_experiences, {
     is_show: true,
   });
+  const isCVNotEmpty = !isEmpty(cv);
 
-  const [processedDescriptions, setProcessedDescriptions] = useState<{
-    [key: string]: string;
-  }>({});
+  const [processedDescriptions, setProcessedDescriptions] = useState<
+    Map<string, string>
+  >(new Map());
 
   useEffect(() => {
     const processDescriptions = async () => {
-      const descriptions: { [key: string]: string } = {};
+      const descriptions = new Map<string, string>();
 
-      for (const educ of filteredEducationItems) {
-        if (educ.description) {
-          descriptions[educ.school] = await convertMarkdownToHtml(
-            educ.description
-          );
-        }
-      }
-
-      for (const exp of filteredProfessionalExperienceItems) {
-        if (exp.description) {
-          descriptions[exp.company] = await convertMarkdownToHtml(
-            exp.description
-          );
-        }
-      }
+      await Promise.all(
+        filteredProfessionalExperienceItems.map(async (exp) => {
+          if (exp.description) {
+            const html = await convertMarkdownToHtml(exp.description);
+            descriptions.set(exp.company, html);
+          }
+        })
+      );
 
       setProcessedDescriptions(descriptions);
     };
 
     processDescriptions();
-  }, [filteredEducationItems, filteredProfessionalExperienceItems]);
+  }, [filteredProfessionalExperienceItems]);
+
+  const resumeCV = getFileSrc(cv) ?? DEFAULT_RESUME;
 
   return (
     <>
       <SEO title="Resume" />
-
       <section className="max-w-4xl mx-auto p-6">
         <div className="bg-gray-100 p-6 rounded-2xl shadow-md text-center">
           <h1 className="text-3xl font-bold">{personal_info.name}</h1>
@@ -67,6 +66,20 @@ const Resume = () => {
               </a>
             </p>
           </div>
+
+          {isCVNotEmpty && (
+            <div className="mt-6">
+              <a
+                download
+                href={resumeCV}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 mt-4 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition"
+              >
+                Download Resume
+              </a>
+            </div>
+          )}
         </div>
 
         <div className="mt-12">
@@ -86,12 +99,7 @@ const Resume = () => {
                 </p>
 
                 {educ.description && (
-                  <div
-                    className="text-gray-600 prose mt-2"
-                    dangerouslySetInnerHTML={{
-                      __html: processedDescriptions[educ.school] || "",
-                    }}
-                  />
+                  <p className="text-gray-600 mt-2">{educ.description}</p>
                 )}
               </li>
             ))}
@@ -114,13 +122,15 @@ const Resume = () => {
                   {exp.start_date} - {exp.end_date || PRESENT}
                 </p>
 
-                {exp.description && (
-                  <div
-                    className="text-gray-600 prose mt-2"
-                    dangerouslySetInnerHTML={{
-                      __html: processedDescriptions[exp.company] || "",
-                    }}
-                  />
+                {exp.description && processedDescriptions.has(exp.company) && (
+                  <div className="text-gray-700 text-sm space-y-3 mt-2">
+                    <div
+                      className="text-gray-600 mt-2 [&>p]:mb-2 [&>h1]:text-2xl [&>h2]:text-xl [&>h3]:text-lg [&>ul]:list-disc [&>ul]:pl-5 [&>ol]:list-decimal [&>ol]:pl-5"
+                      dangerouslySetInnerHTML={{
+                        __html: processedDescriptions.get(exp.company) || "",
+                      }}
+                    />
+                  </div>
                 )}
               </li>
             ))}

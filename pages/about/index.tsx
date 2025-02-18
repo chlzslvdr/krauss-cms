@@ -83,12 +83,9 @@ const About = () => {
                 className="flex items-center gap-4 bg-gray-100 p-4 rounded-md shadow-md hover:bg-gray-200 transition"
               >
                 {cert.icon_class === ICONIFY && cert.data_icon ? (
-                  <Icon
-                    icon={cert.data_icon}
-                    className="text-3xl text-blue-600"
-                  />
+                  <Icon icon={cert.data_icon} className="text-4xl" />
                 ) : (
-                  <i className={`${cert.icon_class} text-3xl text-blue-600`} />
+                  <i className={`${cert.icon_class} text-4xl`} />
                 )}
                 <Link href={cert.url} legacyBehavior>
                   <a

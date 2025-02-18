@@ -28,4 +28,5 @@ export interface ResumeAttributes {
   personal_info: PersonalInfo;
   educations: Education[];
   professional_experiences: Experience[];
+  cv: string;
 }

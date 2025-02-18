@@ -193,6 +193,7 @@ collections:
             widget: "file"
             accept: ".pdf"
             allow_multiple: false
+            required: false
 
       - name: "portfolio"
         label: "Portfolio"
