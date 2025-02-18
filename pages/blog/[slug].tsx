@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAllBlogs, getBlogBySlug } from "@lib/getBlogs";
 import { BlogPostProps } from "@commons/interfaces/blog";
 import SEO from "@components/SEO/index";
+import {getImageSrc} from "@commons/methods/getImageSrc";
 
 const BlogPost: React.FC<BlogPostProps> = ({
   title,
@@ -20,7 +21,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
         {featured_image && (
           <div className="mb-6">
             <img
-              src={`/static/${featured_image}`}
+              src={getImageSrc(featured_image)}
               alt={title}
               className="w-full h-64 object-cover rounded-xl shadow-md"
             />
