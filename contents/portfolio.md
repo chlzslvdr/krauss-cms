@@ -1,7 +1,7 @@
 ---
 projects:
   - project_name: TrendHorizon
-    description: A sample shopping cart project
+    description: Sample shopping cart
     url: https://www.google.com
     image: assets/portfolio-1.png
     is_show: true
