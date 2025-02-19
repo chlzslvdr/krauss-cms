@@ -10,18 +10,18 @@ const Home = () => {
 
   return (
     <>
-      <section className="flex flex-col items-center justify-center min-h-screen text-center px-4">
-        <h1 className="text-4xl font-bold">{name}</h1>
-        <p className="text-lg text-gray-600 mt-2">{subtitle}</p>
+      <section className="flex flex-col items-center justify-center min-h-screen text-center px-6">
+        <h1 className="text-5xl font-bold text-gray-900">{name}</h1>
+        <p className="text-xl text-gray-600 mt-3">{subtitle}</p>
 
-        <div className="flex gap-4 mt-6">
-          {filteredSocialLinks.map((social, index) => (
-            <Link key={index} href={social.url} legacyBehavior>
+        <div className="flex gap-5 mt-6">
+          {filteredSocialLinks.map((social) => (
+            <Link key={social.platform} href={social.url} legacyBehavior>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.platform}
-                className="text-2xl text-gray-700 hover:text-black transition"
+                className="text-3xl text-green-primary hover:text-green-secondary transition-transform transform hover:scale-110"
               >
                 <i className={social.icon_class} />
               </a>

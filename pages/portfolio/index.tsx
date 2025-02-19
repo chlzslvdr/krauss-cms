@@ -16,11 +16,13 @@ const Portfolio = () => {
       <SEO title="Portfolio" />
 
       <section className="max-w-5xl mx-auto p-6">
-        <h1 className="text-4xl font-bold text-center mb-8">Portfolio</h1>
+        <h1 className="text-4xl font-bold text-center mb-8 text-green-primary">
+          Portfolio
+        </h1>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjectItems.map((proj, index) => (
-            <Link key={index} href={proj.url} legacyBehavior>
+          {filteredProjectItems.map((proj) => (
+            <Link key={proj.project_name} href={proj.url} legacyBehavior>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -35,7 +37,9 @@ const Portfolio = () => {
                 </div>
 
                 <div className="p-4">
-                  <h2 className="text-xl font-semibold">{proj.project_name}</h2>
+                  <h2 className="text-xl font-semibold text-light-dark">
+                    {proj.project_name}
+                  </h2>
                   <p className="text-gray-600 mt-2">{proj.description}</p>
                 </div>
               </a>

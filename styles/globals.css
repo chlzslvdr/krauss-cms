@@ -36,3 +36,12 @@ body {
   height: 100%;
   font-family: "Raleway", sans-serif;
 }
+
+@theme {
+  --color-green-primary: #6b705c;
+  --color-green-secondary: #b7b7a4;
+  --color-green-secondary-dark: #a5a58d;
+  --color-light-primary: #ffe8d6;
+  --color-light-secondary: #ddbea9;
+  --color-light-dark: #cb997e;
+}

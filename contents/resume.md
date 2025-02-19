@@ -10,6 +10,12 @@ personal_info:
   phone: 0844 499 5000
   email: tabitha@yahoo.com
 educations:
+  - school: Lakewood Charter School
+    degree: High School
+    year_started: 2012
+    year_ended: 2015
+
+    is_show: true
   - school: Woodcreek College
     degree: B.S. in Computer Engineering
     year_started: 2015

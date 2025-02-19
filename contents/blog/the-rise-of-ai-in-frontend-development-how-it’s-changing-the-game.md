@@ -3,7 +3,7 @@ title: "The Rise of AI in Frontend Development: How It’s Changing the Game"
 date: January 22, 2025
 author: Tabitha Krauss
 is_show: true
-excerpt: "From intelligent code suggestions to automated UI testing, AI is reshaping the way developers build and optimize web applications."
+excerpt: From intelligent code suggestions to automated UI testing, AI is reshaping the way developers build and optimize web applications. Sample.
 ---
 
 ### **Introduction**
@@ -14,7 +14,7 @@ In this blog, we’ll explore how AI is making an impact on frontend development
 
 ### **AI-Powered Code Assistants**
 
-Tools like **GitHub Copilot** and **Tabnine** leverage AI to provide real-time code suggestions, auto-complete functions, and even generate entire code snippets based on context. These AI-powered assistants help developers:
+Tools like **GitHub Copilot** and **Tabnine** leverage AI to provide real-time code suggestions, auto-complete functions, and even generate entire code snippets based on context. Sample. These AI-powered assistants help developers:
 
 - Reduce repetitive coding tasks
 - Minimize syntax errors

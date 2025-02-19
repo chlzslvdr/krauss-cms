@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import SEO from "@components/SEO/index";
 
 const Contact = () => {
-  const [status, setStatus] = useState<"IDLE" | "SUCCESS" | "ERROR">("IDLE");
+  const [status, setStatus] = useState<
+    "IDLE" | "SUCCESS" | "ERROR" | "LOADING"
+  >("IDLE");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setStatus("LOADING");
+
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
@@ -38,7 +42,9 @@ const Contact = () => {
       <SEO title="Contact" />
 
       <section className="max-w-2xl mx-auto p-8">
-        <h1 className="text-4xl font-bold text-center text-gray-900">Contact Me</h1>
+        <h1 className="text-4xl font-bold text-center text-gray-900">
+          Contact Me
+        </h1>
         <p className="text-gray-600 text-center mt-2">
           Feel free to reach out! I'll get back to you as soon as possible.
         </p>
@@ -48,7 +54,7 @@ const Contact = () => {
           method="POST"
           data-netlify="true"
           onSubmit={handleSubmit}
-          className="mt-6 bg-white p-6 rounded-lg shadow-lg space-y-4"
+          className="mt-6 bg-white p-6 rounded-xl shadow-lg space-y-5"
         >
           <input type="hidden" name="form-name" value="contact" />
 
@@ -60,7 +66,7 @@ const Contact = () => {
               type="text"
               name="name"
               required
-              className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-green-secondary focus:outline-none transition"
             />
           </div>
 
@@ -72,7 +78,7 @@ const Contact = () => {
               type="email"
               name="email"
               required
-              className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-green-secondary focus:outline-none transition"
             />
           </div>
 
@@ -83,15 +89,20 @@ const Contact = () => {
             <textarea
               name="message"
               required
-              className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none h-24"
+              className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-green-secondary focus:outline-none transition h-32 resize-none"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md font-semibold hover:bg-blue-700 transition"
+            className={`w-full bg-green-primary text-white py-3 rounded-lg font-semibold transition cursor-pointer ${
+              status === "LOADING"
+                ? "opacity-70 cursor-not-allowed"
+                : "hover:bg-green-secondary"
+            }`}
+            disabled={status === "LOADING"}
           >
-            Send
+            {status === "LOADING" ? "Sending..." : "Send Message"}
           </button>
         </form>
 
@@ -103,12 +114,12 @@ const Contact = () => {
         </form>
 
         {status === "SUCCESS" && (
-          <p className="text-green-600 mt-4 text-center animate-fade">
+          <p className="text-black mt-4 text-center animate-fade-in-out">
             ✅ Thank you! Your message has been sent.
           </p>
         )}
         {status === "ERROR" && (
-          <p className="text-red-600 mt-4 text-center animate-fade">
+          <p className="text-black mt-4 text-center animate-fade-in-out">
             ❌ Oops! Something went wrong. Please try again.
           </p>
         )}

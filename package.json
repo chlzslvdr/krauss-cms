@@ -2,7 +2,7 @@
   "name": "krauss-cms",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev -p 3070",
+    "dev": "next dev -p 3030",
     "build": "next build",
     "start": "next start"
   },
