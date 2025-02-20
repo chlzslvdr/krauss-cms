@@ -1,7 +1,7 @@
 import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
-import SEO from "../next-seo.config";
+import SEO from "../../next-seo.config";
 import Layout from "@components/Layout/index";
 import "@styles/globals.css";
 import "@flaticon/flaticon-uicons/css/all/all.css";

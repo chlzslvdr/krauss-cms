@@ -14,18 +14,22 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
-      "@contents/*": ["contents/*"],
-      "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"],
-      "@commons/*": ["commons/*"],
-      "@components/*": ["components/*"],
-      "@modules/*": ["modules/*"],
-      "@lib/*": ["lib/*"]
+      "@commons/*": ["./src/commons/*"],
+      "@components/*": ["./src/components/*"],
+      "@contents/*": ["./src/contents/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@lib/*": ["./src/lib/*"]
     },
     "allowJs": true,
     "incremental": true,
     "module": "esnext"
   },
-  "include": ["global.d.ts", "pages/**/*", "components/**/*", "commons/**/*"],
+  "include": [
+    "global.d.ts",
+    "src/pages/**/*",
+    "src/components/**/*",
+    "src/commons/**/*"
+  ],
   "exclude": ["node_modules"]
 }

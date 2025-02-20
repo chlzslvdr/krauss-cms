@@ -19,7 +19,7 @@ collections:
     files:
       - name: "home"
         label: "Home"
-        file: "contents/home.md"
+        file: "src/contents/home.md"
         format: "frontmatter"
         fields:
           - { label: "Name", name: "name", widget: "string" }
@@ -58,7 +58,7 @@ collections:
 
       - name: "about"
         label: "About"
-        file: "contents/about.md"
+        file: "src/contents/about.md"
         format: "frontmatter"
         fields:
           - label: "Summary"
@@ -115,7 +115,7 @@ collections:
 
       - name: "resume"
         label: "Resume"
-        file: "contents/resume.md"
+        file: "src/contents/resume.md"
         format: "frontmatter"
         fields:
           - label: "Personal Info"
@@ -197,7 +197,7 @@ collections:
 
       - name: "portfolio"
         label: "Portfolio"
-        file: "contents/portfolio.md"
+        file: "src/contents/portfolio.md"
         format: "frontmatter"
         fields:
           - label: "Projects"
@@ -223,7 +223,7 @@ collections:
 
       - name: "testimonials"
         label: "Testimonials"
-        file: "contents/testimonials.md"
+        file: "src/contents/testimonials.md"
         format: "frontmatter"
         fields:
           - label: "Testimonials"
@@ -260,7 +260,7 @@ collections:
 
   - name: "blog"
     label: "Blog"
-    folder: "contents/blog"
+    folder: "src/contents/blog"
     create: true
     slug: "{{slug}}"
     format: "frontmatter"

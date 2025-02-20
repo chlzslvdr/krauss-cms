@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { getAllBlogs, getBlogBySlug } from "@lib/getBlogs";
 import { BlogPostProps } from "@commons/interfaces/blog";
-import { getImageSrc } from "@commons/methods/getImageSrc";
+import { getAssetsSrc } from "@commons/methods/getAssetsSrc";
 import SEO from "@components/SEO/index";
 
 const BlogPost: React.FC<BlogPostProps> = ({
@@ -36,7 +36,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
             {
               alt: title,
               url: featured_image
-                ? getImageSrc(featured_image)
+                ? getAssetsSrc(featured_image)
                 : "https://chlzslvdr.sirv.com/krauss/default.jpg",
             },
           ],
@@ -48,7 +48,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
           <div className="mb-6 rounded-xl overflow-hidden shadow-lg">
             <img
               alt={title}
-              src={getImageSrc(featured_image)}
+              src={getAssetsSrc(featured_image)}
               className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>

@@ -6,7 +6,7 @@ import { attributes } from "@contents/resume.md";
 import { ResumeAttributes } from "@commons/interfaces/resume";
 import { convertMarkdownToHtml } from "@commons/methods/convertMarkdownToHtml";
 import SEO from "@components/SEO/index";
-import { getFileSrc } from "@commons/methods/getFileSrc";
+import { getAssetsSrc } from "@commons/methods/getAssetsSrc";
 
 const PRESENT = "Present";
 const DEFAULT_RESUME = "https://chlzslvdr.sirv.com/krauss/resume.pdf";
@@ -44,7 +44,7 @@ const Resume = () => {
     processDescriptions();
   }, [filteredProfessionalExperienceItems]);
 
-  const resumeCV = getFileSrc(cv) ?? DEFAULT_RESUME;
+  const resumeCV = getAssetsSrc(cv) ?? DEFAULT_RESUME;
 
   return (
     <>

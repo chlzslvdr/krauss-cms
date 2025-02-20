@@ -4,7 +4,7 @@ import filter from "lodash/filter";
 import { attributes } from "@contents/portfolio.md";
 import { PortfolioAttributes } from "@commons/interfaces/portfolio";
 import SEO from "@components/SEO/index";
-import { getImageSrc } from "@commons/methods/getImageSrc";
+import { getAssetsSrc } from "@commons/methods/getAssetsSrc";
 
 const Portfolio = () => {
   const { projects } = attributes as PortfolioAttributes;
@@ -30,7 +30,7 @@ const Portfolio = () => {
               >
                 <div className="relative w-full h-48">
                   <img
-                    src={getImageSrc(proj.image)}
+                    src={getAssetsSrc(proj.image)}
                     alt={proj.project_name}
                     className="w-full h-48 object-cover"
                   />
