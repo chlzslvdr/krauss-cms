@@ -21,6 +21,7 @@ collections:
         label: "Home"
         file: "src/contents/home.md"
         format: "frontmatter"
+        preview_path: "/"
         fields:
           - { label: "Name", name: "name", widget: "string" }
           - { label: "Subtitle", name: "subtitle", widget: "string" }
@@ -60,6 +61,7 @@ collections:
         label: "About"
         file: "src/contents/about.md"
         format: "frontmatter"
+        preview_path: "/about"
         fields:
           - label: "Summary"
             name: "summary"
@@ -117,6 +119,7 @@ collections:
         label: "Resume"
         file: "src/contents/resume.md"
         format: "frontmatter"
+        preview_path: "/resume"
         fields:
           - label: "Personal Info"
             name: "personal_info"
@@ -199,6 +202,7 @@ collections:
         label: "Portfolio"
         file: "src/contents/portfolio.md"
         format: "frontmatter"
+        preview_path: "/portfolio"
         fields:
           - label: "Projects"
             name: "projects"
@@ -225,6 +229,7 @@ collections:
         label: "Testimonials"
         file: "src/contents/testimonials.md"
         format: "frontmatter"
+        preview_path: "/about"
         fields:
           - label: "Testimonials"
             name: "testimonials"
@@ -265,6 +270,7 @@ collections:
     slug: "{{slug}}"
     format: "frontmatter"
     identifier_field: "title"
+    preview_path: "/blog/{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", date_format: "LL" }

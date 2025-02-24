@@ -8,7 +8,7 @@
 - [Decap CMS](https://decapcms.org) - Open source content management for your Git workflow
 - [Tailwind CSS](https://tailwindcss.com)
 - [Netlify](https://www.netlify.com)
-- [Netlify Forms & Identity](https://www.netlify.com)
+- Netlify Forms & Identity
 
 ## Installation
 
