@@ -25,11 +25,6 @@
     "incremental": true,
     "module": "esnext"
   },
-  "include": [
-    "global.d.ts",
-    "src/pages/**/*",
-    "src/components/**/*",
-    "src/commons/**/*"
-  ],
+  "include": ["global.d.ts", "src/**/*"],
   "exclude": ["node_modules"]
 }
