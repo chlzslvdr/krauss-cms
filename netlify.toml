@@ -7,16 +7,6 @@
   to = "/"
   status = 200
 
-[[redirects]]
-  from = "/api/draft"
-  to = "/.netlify/functions/draft"
-  status = 200
-
-[[redirects]]
-  from = "/api/exit-draft"
-  to = "/.netlify/functions/exit-draft"
-  status = 200
-
 [[headers]]
   for = "/*"
   [headers.values]
