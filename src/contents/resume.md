@@ -53,5 +53,5 @@ professional_experiences:
 
       * Integrated SEO best practices using next-seo to improve visibility
     is_show: true
-cv: assets/cv-1.pdf
+cv: https://chlzslvdr.sirv.com/krauss/resume.pdf
 ---

@@ -6,28 +6,25 @@ const Contact = () => {
     "IDLE" | "SUCCESS" | "ERROR" | "LOADING"
   >("IDLE");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("LOADING");
-
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        setStatus("SUCCESS");
-        form.reset();
-      } else {
-        setStatus("ERROR");
-      }
-    } catch {
-      setStatus("ERROR");
-    }
+    fetch("/", {
+      method: "POST",
+      body: new URLSearchParams(formData as any).toString(),
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    })
+      .then((response) => {
+        if (response.ok) {
+          setStatus("SUCCESS");
+          form.reset();
+        } else {
+          setStatus("ERROR");
+        }
+      })
+      .catch(() => setStatus("ERROR"));
   };
 
   useEffect(() => {
@@ -53,10 +50,17 @@ const Contact = () => {
           name="contact"
           method="POST"
           data-netlify="true"
+          netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
           className="mt-6 bg-white p-6 rounded-xl shadow-lg space-y-5"
         >
           <input type="hidden" name="form-name" value="contact" />
+
+          <p hidden>
+            <label>
+              Don’t fill this out: <input name="bot-field" />
+            </label>
+          </p>
 
           <div>
             <label className="block text-sm font-medium text-gray-700">
