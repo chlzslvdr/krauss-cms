@@ -8,6 +8,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setStatus("LOADING");
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
@@ -47,26 +48,32 @@ const Contact = () => {
         </p>
 
         <form
+          data-testid="contact-form"
           name="contact"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
           className="mt-6 bg-white p-6 rounded-xl shadow-lg space-y-5"
+          aria-label="contact-form"
         >
           <input type="hidden" name="form-name" value="contact" />
 
           <p hidden>
-            <label>
-              Don’t fill this out: <input name="bot-field" />
+            <label htmlFor="bot-field">
+              Don’t fill this out: <input id="bot-field" name="bot-field" />
             </label>
           </p>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700"
+            >
               Name:
             </label>
             <input
+              id="name"
               type="text"
               name="name"
               required
@@ -75,10 +82,14 @@ const Contact = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
               Email:
             </label>
             <input
+              id="email"
               type="email"
               name="email"
               required
@@ -87,14 +98,18 @@ const Contact = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-700"
+            >
               Message:
             </label>
             <textarea
+              id="message"
               name="message"
               required
               className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-green-secondary focus:outline-none transition h-32 resize-none"
-            ></textarea>
+            />
           </div>
 
           <button
@@ -114,7 +129,7 @@ const Contact = () => {
           <input type="hidden" name="form-name" value="contact" />
           <input type="text" name="name" />
           <input type="email" name="email" />
-          <textarea name="message"></textarea>
+          <textarea name="message" />
         </form>
 
         {status === "SUCCESS" && (

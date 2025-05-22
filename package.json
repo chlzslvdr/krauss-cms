@@ -4,9 +4,11 @@
   "scripts": {
     "dev": "next dev -p 3030",
     "build": "next build",
+    "build:test": "npm run test && npm run build",
     "start": "next start",
-    "test": "jest --ci --coverage",
-    "test:watch": "jest --watch"
+    "test": "npx jest --clearCache && jest --ci --coverage",
+    "test:watch": "jest --watch",
+    "coverage:pdf": "npm run test && node generate-coverage-pdf.js"
   },
   "author": "chlzslvdr",
   "license": "ISC",
@@ -44,6 +46,12 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
+    "puppeteer": "^24.9.0",
     "typescript": "5.8.3"
+  },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ]
   }
 }

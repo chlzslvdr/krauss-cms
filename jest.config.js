@@ -1,8 +1,8 @@
-const nextJest = require('next/jest')
+const nextJest = require('next/jest');
 
 const createJestConfig = nextJest({
   dir: './',
-})
+});
 
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
@@ -16,6 +16,15 @@ const customJestConfig = {
     '^.+\\.(css|scss)$': 'identity-obj-proxy',
   },
   testEnvironment: 'jest-environment-jsdom',
-}
+  transformIgnorePatterns: [
+    "/node_modules/(?!remark|remark-parse|remark-html|other-esm-deps)/"
+  ],
+  transform: {
+    '^.+\\.[jt]sx?$': 'babel-jest',
+  },
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageReporters: ['html', 'text-summary', 'lcov'],
+};
 
-module.exports = createJestConfig(customJestConfig)
+module.exports = createJestConfig(customJestConfig);

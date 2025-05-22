@@ -21,9 +21,11 @@ const Blogs = ({ blogs }: BlogProps) => {
               className="bg-white shadow-lg rounded-xl p-6 transition hover:shadow-xl border-l-4 border-green-primary"
             >
               <Link href={`/blog/${blog.slug}`}>
-                <h2 className="text-2xl font-semibold text-green-primary hover:underline cursor-pointer">
-                  {blog.title}
-                </h2>
+                <a>
+                  <h2 className="text-2xl font-semibold text-green-primary hover:underline cursor-pointer">
+                    {blog.title}
+                  </h2>
+                </a>
               </Link>
 
               <p className="text-gray-500 text-sm mt-2 flex items-center gap-2">
@@ -40,9 +42,9 @@ const Blogs = ({ blogs }: BlogProps) => {
 
               <div className="mt-4">
                 <Link href={`/blog/${blog.slug}`}>
-                  <span className="inline-block text-green-primary hover:text-green-secondary font-medium">
+                  <a className="inline-block text-green-primary hover:text-green-secondary font-medium">
                     Read More →
-                  </span>
+                  </a>
                 </Link>
               </div>
             </article>

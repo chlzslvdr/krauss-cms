@@ -45,6 +45,19 @@ bun dev
 
 Open [http://localhost:3030](http://localhost:3030) with your browser to see the result.
 
+## Run Tests
+
+Run the test suite using:
+
+```bash
+npm run test
+```
+
+You can generate [Coverage Reports](coverage-report.pdf) using:
+```bash
+npm run coverage:pdf
+```
+
 ## Access CMS Admin
 
 Open [https://krauss-cms.netlify.app/admin](https://krauss-cms.netlify.app/admin) and log in.
