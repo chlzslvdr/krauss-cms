@@ -88,6 +88,7 @@ const Header = () => {
               <Link
                 key={nav.page}
                 href={nav.link}
+                aria-label={nav.page}
                 className={`hover:text-green-secondary text-center transition-colors ${
                   isActive
                     ? "text-green-primary font-semibold"
