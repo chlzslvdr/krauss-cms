@@ -8,7 +8,7 @@
     "start": "next start",
     "test": "npx jest --clearCache && jest --ci --coverage",
     "test:watch": "jest --watch",
-    "coverage:pdf": "npm run test && node generate-coverage-pdf.js"
+    "coverage:pdf": "rm -f coverage-report.pdf && npm run test && node generate-coverage-pdf.js"
   },
   "author": "chlzslvdr",
   "license": "ISC",
