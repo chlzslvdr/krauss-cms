@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://krauss-cms.netlify.app
+
+# Sitemaps
+Sitemap: https://krauss-cms.netlify.app/sitemap.xml
