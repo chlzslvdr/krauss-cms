@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev -p 3030",
-    "build": "next build  && npm run postbuild",
+    "build": "next build",
     "build:test": "npm run test && npm run build",
     "start": "next start",
     "test": "npx jest --clearCache && jest --ci --coverage",
