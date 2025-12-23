@@ -1,5 +1,6 @@
 module.exports = {
   output: "export",
+  turbopack: {},
   webpack: (cfg) => {
     cfg.module.rules.push({
       test: /\.md$/,
@@ -9,6 +10,12 @@ module.exports = {
     return cfg;
   },
   images: {
-    domains: ["chlzslvdr.sirv.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "chlzslvdr.sirv.com",
+        pathname: "/**",
+      },
+    ],
   },
 };

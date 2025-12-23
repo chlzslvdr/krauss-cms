@@ -20,7 +20,7 @@ const Blogs = ({ blogs }: BlogProps) => {
               key={blog.slug}
               className="bg-white shadow-lg rounded-xl p-6 transition hover:shadow-xl border-l-4 border-green-primary"
             >
-              <Link href={`/blog/${blog.slug}`}>
+              <Link href={`/blog/${blog.slug}`} legacyBehavior>
                 <a>
                   <h2 className="text-2xl font-semibold text-green-primary hover:underline cursor-pointer">
                     {blog.title}
@@ -41,7 +41,7 @@ const Blogs = ({ blogs }: BlogProps) => {
               )}
 
               <div className="mt-4">
-                <Link href={`/blog/${blog.slug}`}>
+                <Link href={`/blog/${blog.slug}`} legacyBehavior>
                   <a className="inline-block text-green-primary hover:text-green-secondary font-medium">
                     Read More →
                   </a>
