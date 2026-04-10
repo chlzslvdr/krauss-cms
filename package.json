@@ -16,20 +16,20 @@
   "dependencies": {
     "@flaticon/flaticon-uicons": "3.3.1",
     "@iconify/react": "6.0.2",
-    "@tailwindcss/postcss": "4.2.1",
+    "@tailwindcss/postcss": "4.2.2",
     "@tailwindcss/typography": "0.5.19",
     "gray-matter": "4.0.3",
-    "lodash": "4.17.23",
-    "marked": "17.0.4",
-    "next": "16.1.6",
+    "lodash": "4.18.1",
+    "marked": "18.0.0",
+    "next": "16.2.3",
     "next-seo": "7.2.0",
     "next-sitemap": "4.2.3",
-    "postcss": "8.5.8",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "postcss": "8.5.9",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "remark": "15.0.1",
     "remark-html": "16.0.1",
-    "tailwindcss": "4.2.1"
+    "tailwindcss": "4.2.2"
   },
   "devDependencies": {
     "@babel/core": "7.29.0",
@@ -39,7 +39,7 @@
     "@testing-library/user-event": "14.6.1",
     "@types/jest": "30.0.0",
     "@types/lodash": "4.17.24",
-    "@types/node": "25.4.0",
+    "@types/node": "25.6.0",
     "@types/react": "19.2.14",
     "autoprefixer": "10.4.27",
     "babel-jest": "30.3.0",
@@ -47,8 +47,8 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "30.3.0",
     "jest-environment-jsdom": "30.3.0",
-    "puppeteer": "24.39.0",
-    "typescript": "5.9.3"
+    "puppeteer": "24.40.0",
+    "typescript": "6.0.2"
   },
   "babel": {
     "presets": [
